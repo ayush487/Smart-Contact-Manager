@@ -1,0 +1,99 @@
+body {
+	background : #e2e2e2!important
+}
+
+.bg-primary {
+	background : #009688!important;
+}
+.banner {
+	background : linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)) , url(../image/banner.jpg);
+	background-size:cover;
+	width : 100%;
+	height : 93vh;
+	color : #ffffff;
+}
+
+.my-card {
+	padding : 20px;
+	background : #ffffff;
+	min-width: 400px;
+	width : 60%
+}
+
+.sidebar {
+	width: 18%;
+	background: white;
+	height : 100vh;
+	position: fixed;
+	padding-top: 45px;
+	z-index: 99999;
+}
+
+@media only screen and (max-width : 600px){
+	.sidebar {
+		display : none;
+		width: 80%!important;
+		background: white;
+		height : 100vh;
+		position: fixed;
+		padding-top: 20px;
+	}
+	
+	.content {
+		margin-left: 0%!important;
+	}
+	
+}
+
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+}
+
+.sidebar .crossBtn {
+	position: absolute;
+	top : 0px;
+	right : 20px;
+	font-size: 35px;
+	cursor: pointer;
+}
+
+
+.sidebar a:hover {
+	background: #e2e2e2;
+}
+
+.sidebar .divider {
+	background: #e2e2e2;
+	height: .5px;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.content {
+	margin-left: 20%;
+}
+
+.content .bars {
+	margin-left: 5px;
+	margin-top:10px;
+	cursor: pointer;
+}
+
+.contact_profile_picture {
+	width: 30px;
+	height: 30px;
+	object-fit : cover;
+	border-radius: 10px;
+}
+
+.contact_picture_details {
+	height: 200px;
+	width: 200px;
+	border-radius: 100px;
+	border: 2px solid black;
+}

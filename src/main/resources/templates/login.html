@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8" />
+<title>About</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="my-card mt-2">
+					<div class="container text-center">
+						<img style="width: 70px" th:src="@{/image/signin.png}"
+							alt="signin" />
+					</div>
+					<h1 class="text-center">Login</h1>
+					<div th:if="${param.error}" class="alert alert-danger">
+					Invalid Username or Password</div>
+					
+					<div th:if="${param.logout}" class="alert alert-success">
+					You have been logged out</div>
+
+					<form method="post" action="/dologin">
+						<div class="mb-3">
+							<label for="Email" class="form-label">Email
+								address</label> <input type="email" class="form-control" name="username"
+								id="Email" aria-describedby="emailHelp" placeholder="Email" required="required">
+							
+						</div>
+						<div class="mb-3">
+							<label for="Password" class="form-label">Password</label>
+							<input type="password" class="form-control" name="password"
+								id="Password" placeholder="Password" required="required">
+						</div>
+						<div class="mb-3 form-check form-check-inline">
+							<input type="checkbox" class="form-check-input"
+								id="exampleCheck1">
+							<label class="form-check-label"
+								for="exampleCheck1">Remember me</label><br />
+							<a th:href="@{/signup}"  class="ml-auto text-decoration-none text-blue">Register here</a>
+							 
+						</div>
+						<div class="container mb-3 text-center">
+							<button type="submit" class="btn bg-primary text-white">SignIn</button>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
