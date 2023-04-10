@@ -199,4 +199,12 @@ public class UserController {
 		model.addAttribute("pageTitle", "My Profile");
 		return "normal/myprofile";
 	}
+	
+	/*
+	 * //User Setting Page Request
+	 * 
+	 * @GetMapping("/setting") public String setting(Model model) {
+	 * model.addAttribute("pageTitle", "User Settings - Smart Contact Manager");
+	 * return "normal/setting"; }
+	 */
 }

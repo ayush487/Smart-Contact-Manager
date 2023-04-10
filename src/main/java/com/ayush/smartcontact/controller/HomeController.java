@@ -70,7 +70,6 @@ public class HomeController {
 				model.addAttribute("user", user);
 				return "signup";
 			}
-
 			if (userRepository.existsByEmail(user.getEmail())) {
 				throw new Exception("email address already exists");
 			}
@@ -82,7 +81,6 @@ public class HomeController {
 //			System.out.println("User : " + result);
 			model.addAttribute("user", new User());
 			session.setAttribute("message", new Message("Successfully Registered", "alert-success"));
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("user", user);

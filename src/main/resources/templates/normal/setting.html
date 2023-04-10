@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+	th:replace="~{normal/base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Dashboard</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="d-flex justify-content-center"> <!-- Modified line -->
+					<div class="my-card mt-2">
+						<div class="alert text-center" th:if="${session.message}"
+							th:classappend="${session.message.type}" role="alert">
+							<div th:text="${session.message.content}"></div>
+						</div>
+						<h1 class="text-center">Update your profile</h1>
+						<form action="" th:action="@{/do_register}" method="post"
+							th:object="${user}">
+							<!-- Name Field -->
+							<div class="mb-3">
+								<label for="name_field" class="form-label text-secondary">Your Name</label> <input
+									type="text" class="form-control" id="name_field" name="name"
+									placeholder="Enter your name here" required="required"
+									aria-describedby="emailHelp" th:value="${user.name}"
+									th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}">
+								<div class="invalid-feedback"
+									th:each="e : ${#fields.errors('name')}" th:text="${e}"></div>
+							</div>
+							<!-- About Field -->
+							<div class="mb-3">
+								<textarea placeholder="Write something about yourself" rows="6"
+									class="form-control" th:text="${user.aboutUser}"
+									name="aboutUser"></textarea>
+							</div>
+							
+							<!-- Submit button -->
+							<div class="container mb-3 text-center">
+								<button type="submit" class="btn bg-primary text-white">Update</button>
+								
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

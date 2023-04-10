@@ -17,4 +17,6 @@ public interface ContactRepository extends JpaRepository<Contact, Integer>{
 	
 	@Query(value = "Select * from Contact where user_id = ?1", nativeQuery = true)
 	public Page<Contact> findContactsByUserId(@Param("userId") int userId, Pageable pageable);
+	
+	public List<Contact> findByNameContainingAndUser(String keyword, User user);
 }

@@ -97,3 +97,15 @@ body {
 	border-radius: 100px;
 	border: 2px solid black;
 }
+
+.search-container {
+	position: relative;
+}
+.search-result {
+	position: absolute;
+	background: white;
+	opacity : 0.95;
+	padding: 10px;
+	width: 100%;
+	display : none;
+}
